@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl" style="width: 100%; height: 90%;">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: #dfdfdf;
+            color: #3b3e43;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+            background-attachment: fixed;
+            margin: 0px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+
+        label {
+            margin: 2px 6px;
+            white-space: pre-wrap;
+        }
+
+        table {
+            position: relative;
+            left: 12%;
+            width: 75%;
+        }
+        table tbody tr  td {
+            margin: 4px 10px;
+        }
+        table tr {
+            margin: 2px 12px;
+        }
+
+        #stopka {
+            background-color: #c9c9c9;
+            position: relative;
+            display: table;
+            padding: 13px 32px;
+            width: 80%;
+            margin: 2px auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #tresc {
+            background: #ffffff;
+            position: relative;
+            display: block;
+            padding: 16px 32px;
+            width: 80%;
+            margin: 24px auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #pasek {
+            background: rgb(191, 210, 85);
+            background: -webkit-linear-gradient(45deg, rgb(191, 210, 85) 0%, rgb(142, 185, 42) 50%, rgb(114, 170, 0) 51%, rgb(158, 203, 45) 100%);
+            background: linear-gradient(45deg, rgb(191, 210, 85) 0%, rgb(142, 185, 42) 50%, rgb(114, 170, 0) 51%, rgb(158, 203, 45) 100%);
+            position: relative;
+            display: inline-block;
+            padding: 16px 32px; width: 80%;
+            margin: 25px auto; height: 5%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        @media only screen and (max-width: 1367px) {
+            label {
+                margin: 2px 3px;
+            }
+            table {
+                width: 98%;
+                left: 0%;
+            }
+
+            #pasek {
+                width: 96%;
+            }
+
+            #tresc {
+                width: 85%;
+                margin: 10px auto;
+            }
+
+            #stopka {
+                width: 100%;
+                margin-left: -10px;
+                padding: 13px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="pasek">
+        <span style="padding: 3px; position: absolute; left: 2%; top: 12%; font-style: italic; font-weight: bold; font-size: xx-large; text-shadow: 3px 3px #c9c9c9; text-decoration: none; width: 100%; height: 100%;">
+            <a style=" color: #ffffff; text-decoration: none; letter-spacing: 2px;" href="index.php">JOLA</a>
+        </span>
+    </div>
+    <!-- TREŚć-->
+    <div id="tresc">
+        <h1>Przywracanie hasła dla konta: </h1>
+        <h2> adres1@op.pl</h2>
+        <br/>
+        <h3>Twoje nowe hasło to: </h3>
+        <h1 style="color: #1E90FF;">GSfs93erg</h1>
+        <h2 style="font-style: italic;"> Pamiętaj, by po zalogowaniu zmienic hasło.</h2>
+        <br/><br/>
+        <span style="position: relative; display: block; padding: 10px 16px; margin: 2px auto; background: #ff0000; color: #ffffff; width: 95%;
+        text-align: center; font-weight: bolder; font-size: 20px; border: 2px solid #ffffff; border-radius: 18px;">
+            <span style="font-style: italic; font-size: 22px;">!!! UWAGA !!!</span><br/><br/> Jeżeli nie klikniołeś/aś przycisku "Przywróć hasło" na naszej stronie, to poinformuj nas telefonicznie o tym emailu.<br/>
+            Prawdopodaobnie nasza strona została zhakowana.
+        </span>
+    </div>
+    <div id="prv-billboard"></div>
+    <!-- STOPKA -->
+    <div id="stopka" style="">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <thead style="z-index: -1;">
+            <tr style="z-index: -1;">
+                <th><label>Zakupy</label></th>
+                <th><label>Twoje konto</label></th>
+                <th><label>Informacje</label></th>
+                <!--<th><label>Newsletter</label></th>-->
+                <th><label>Dane kontaktowe</label></th>
+                <th><label>Godziny otwarcia punktu</label></th>
+            </tr>
+            </thead>
+            <tbody style="z-index: -1; margin: 0 20px;">
+            <form action="" method="post">
+                <tr style="z-index: -1;">
+                    <td><label><a href="index.php">Strona główna</a></label></td>
+                    <td><label><a href="konto.php">Profil klienta</a></label></td>
+                    <td><label><a href="regulamin.php">Regulamin</a></label></td>
+                    <!--<td style="z-index: 0;"><label>Zapisz się do newslettera:</label></td>-->
+                    <td style="z-index: 0;"><label>JOLA</label></td>
+                    <td><label></label></td>
+                </tr>
+                <tr style="z-index: -1;">
+                    <td><label><a href="produkty.php">Produkty</a></label></td>
+                    <td><label><a href="lr.php">Logowanie</a></label></td>
+                    <td><label><a href="odu.php">Odstąpienie od umowy</a></label></td>
+                    <!--<td style="z-index: 0;"><input type="text" class="tb" style="width: 100%; margin: -4px;" name="email" placeholder="E-mail"></td>-->
+                    <td style="z-index: 0;"><label>Puławska 11<br/> 02-515 Warszawa</label></td>
+                    <td><label>Pon - Pt 11:00 - 19:00</label></td>
+                </tr>
+                <tr style="z-index: -1;">
+                    <td><label><a href="promocje.php">Promocje</a></label></td>
+                    <td><label></label></td>
+                    <td><label><a href="pp.php">Polityka prywatności</a></label></td>
+                    <!--<td style="z-index: 0;"><input type="submit" class="btn" style="margin: -2px 35%; height: 17px; padding: -2px;" name="ze" value="Zapisz"></td>-->
+                    <td style="z-index: 0;"><a href="https://www.google.pl/maps/place/Pu%C5%82awska+11,+Warszawa/@52.2113718,21.0206028,19z/data=!3m1!4b1!4m5!3m4!1s0x471eccde67c5a7c5:0x429a96f791af49bd!8m2!3d52.211371!4d21.02115">Pokaż na mapie</a></td>
+                    <td><label>Sob 11:00 - 15:00</label></td>
+                </tr>
+                <tr style="z-index: -1;">
+                    <td><label><a href="kd.php">Koszty dostawy</a></label></td>
+                    <td><label></label></td>
+                    <td><label><a href="sp.php">Sposób płatności</a></label></td>
+                    <!--<td style="z-index: 0;"><label class="control control--checkbox">Akceptuję politykę prywatności<input type="checkbox" name="anl"/><div class="control__indicator"></div></label></td>-->
+                    <td style="z-index: 0;"><label>Telefon:  <a href="tel:+48000000000">+48 000 000 000</a></label></td>
+                </tr>
+                <tr style="z-index: -1;">
+                    <td><label></label></td>
+                    <td><label></label></td>
+                    <td><label><a href="#"></a></label></td>
+                    <!--<td style="z-index: 0;"><label><a href="#"></a></label></td>-->
+                    <td style="z-index: 0;"><label>E-mail: <a href="mailto:kontakt@d.pl">kontakt@d.pl</a></label></td>
+                </tr>
+            </tbody>
+            </form>
+        </table>
+    </div>
+</body>
+</html>

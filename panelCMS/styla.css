@@ -1,0 +1,341 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-01-25, 23:38:17
+    Author     : Cezary
+*/
+
+@import "compass/css3";
+
+html
+{
+    width: 100%;
+    height: 100%;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-size: 15px;
+}
+
+body{
+    background-color: #fff;
+    background-attachment: fixed;
+}
+
+label
+{
+    padding: 2px;
+    margin: 1px;
+    white-space: pre;
+}
+
+div
+{
+    margin: 4px;
+    padding: 3px;
+}
+
+textarea
+{
+    margin: 3px;
+    padding: 2px;
+    min-width: 300px;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    font-size: large;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    position: relative;
+    cursor: pointer;
+    margin: 1px;
+    padding: 2px 9px 4px 9px;
+    border: 2px solid rgba(220, 220, 220, 1);
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    /*font: italic normal bold 14px/normal Arial, Helvetica, sans-serif;*/
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #0199d9;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: -1px -1px 0 rgba(15, 73, 168, 0.66);
+    -webkit-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    letter-spacing: 0.5px;
+    width: auto;
+    text-decoration: none;
+}
+
+.btn:hover {
+    border: 2px solid #dcdcdc;
+    /*font: italic normal normal 14px/normal Arial, Helvetica, sans-serif;*/
+    font-weight: normal;
+    background: rgba(0, 142, 198, 1);
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.btn:active {
+    padding: 3px 11px;
+    border: 2px solid #018dc4;
+    /*font: normal bold 14px/normal Arial, Helvetica, sans-serif;*/
+    font-weight: bold;
+    background: #00a6e8;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.btn:disabled
+{
+    opacity: 0.5;
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    position: relative;
+    cursor: not-allowed;
+    margin: 1px;
+    padding: 2px 9px 4px 9px;
+    border: 2px solid rgba(220, 220, 220, 1);
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    background: #0199d9;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: -1px -1px 0 rgba(15, 73, 168, 0.66);
+    -webkit-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 20ms cubic-bezier(0.42, 0, 0.58, 1);
+    letter-spacing: 0.5px;
+    width: auto;
+    text-decoration: none;
+}
+
+.tb
+{
+    margin: 4px;
+    width: 200px;
+}
+
+.error
+{
+    background-color: red;
+    color: white;
+    margin: 3px 0px 3px 0px;
+}
+
+.option-heading
+{
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+    margin: 2px;
+    text-align: center;
+    cursor: pointer;
+    padding: 3px;
+    padding-left: 11px;
+}
+
+.option-content
+{
+    background: #ddd;
+    padding: 6px;
+    display: none;
+    margin: 2px;
+}
+
+.arrow-down , .arrow-up
+{
+    display: inline-block;
+}
+
+.arrow-up
+{
+    display: none;
+}
+
+.tbl
+{
+    padding: 6px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.tbl > thead
+{
+    padding: 8px;
+    background-color: #00b6ff;
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #777;
+}
+
+.tbl > tbody > tr{
+    background-color: #f5f5f5;
+    padding: 2px 9px;
+    border-bottom: 1px solid #999;
+    border-left: none;
+    border-right: none;
+}
+
+.tbl > tbody > tr:nth-child(even)
+{
+    background-color: #e2e2e2;
+}
+
+.tbl > tbody > tr:hover
+{
+    background-color: #c7c7c7;
+    /*border: 1px solid #555;*/
+}
+
+#pla
+{
+    position: absolute;
+    top: 27%;
+    left: 27%;
+    display: block;
+    width: 45%;
+    text-align: center;
+    padding: 14px;
+    box-shadow: 0 0 3px #7b7b7b;
+}
+
+#pma
+{
+    position: absolute;
+    top: -12px;
+    left: 0;
+    display: block;
+    width: 15%;
+    height: 87.3%;
+    min-width: 190px;
+    text-align: center;
+    padding: 12px;
+    padding-top: 120px;
+    box-shadow: 0 0 3px #7b7b7b;
+}
+
+#panela
+{
+    position: absolute;
+    float: right;
+    top: 0;
+    margin: 10px 20px 10px 19vw;
+    text-align: center;
+    width: auto;
+    min-width: 800px;
+    padding: 16px;
+}
+
+#opdz
+{
+    display: inline;
+    float: left;
+    margin-right: 6px;
+}
+
+.topnav {
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav li {float: left;}
+
+.so {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.so:hover
+{
+    background-color: #111;
+}
+
+.so a.active {background-color: #4CAF50;}
+
+.topnav .so.right {float: right;}
+
+@media screen and (max-width: 600px){
+    .topnav li.right,
+    .topnav li {float: none;}
+}
+
+.tb {
+    display: inline;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    margin: 1px;
+    padding: 3px 6px;
+    border: 3px solid #909090;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    font: normal 14px/normal "Times New Roman", Times, serif;
+    color: #91044d;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.66);
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.tb::placeholder { /* WebKit, Blink, Edge */
+    color: #7c0342;
+}
