@@ -2,15 +2,15 @@
 <div id="pasek1">
     <!--<a href="">PL</a><a href="">PLN</a>-->
     <div id="mpp" onclick="toggleMenu();">
-        <img id="ikotog" src="ikon/kp.png" height="256" />
+        <i id="ikotog" class="fas fa-bars"></i>
     </div>
     <div id="paseklr">
-        <span><a class="kbtn" href="javascript:void(0);" onclick=" pum('#paseklr'); pum('#paseklogowania');">Logowanie</a></span>
-        <span><a class="kbtn" href="lr.php">Rejestracja</a></span>
+        <span><a class="kbtn" href="javascript:void(0);" onclick=" pum('#paseklr'); pum('#paseklogowania');"><i class="fas fa-sign-in-alt"></i>Logowanie</a></span>
+        <span><a class="kbtn" href="lr.php"><i class="fas fa-edit"></i>Rejestracja</a></span>
     </div>
     <div id="pasekpomocy">
-        <a class="kbtn" href="kontakt.php">Kontakt</a>
-        <a class="kbtn" href="pomoc.php">Pomoc</a>
+        <a class="kbtn" href="kontakt.php"><i class="fas fa-phone"></i>Kontakt</a>
+        <a class="kbtn" href="pomoc.php"><i class="fas fa-question-circle"></i>Pomoc</a>
     </div>
     <div id="paseklogowania">
         <?php
@@ -27,7 +27,7 @@
         $formli = '<form name="loginbar" action="" method="post" style="margin: 5px 8px;" enctype="multipart/form-data" accept-charset="UTF-8">
                 <span style="height: 100%; font-weight: bold;" >Zalogowany(a) jest:&nbsp;&nbsp;</span><a href="konto.php">' . $emailM . '</a>
                 <input type="submit" class="btn" style="margin: -3px 4px;" value="Wyloguj" name="btn_logout" /></form>
-                <script type="text/javascript"> pum(\'#paseklogowania\'); </script>';
+                <script type="text/javascript"> pum(\'#paseklr\'); pum(\'#paseklogowania\');</script>';
         $formlo = '<form name="loginbar" action="" method="post" style="white-space: normal;" enctype="multipart/form-data" accept-charset="UTF-8">
                    <input class="btn" style="margin: 0px 4px; padding: -1px -2px;" type="button" value="❮" name="schowaj" onclick=" pum(\'#paseklogowania\'); pum(\'#paseklr\');" />
                    <input class="tb" placeholder="E-mail" type="text" name="email"/>

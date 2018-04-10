@@ -38,11 +38,11 @@ require 'pasek1.php';
     <div id="zawartosc">
         <h1>Konto klienta: <?php echo $_SESSION['email']; ?></h1>
         <div class="tab" >
-            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'dane');" id="ldane">Twoje dane</a>
+            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'dane');" id="ldane"><i class="fas fa-user"></i>Twoje dane</a>
             <!--<a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'adresy');">Adresy</a>-->
-            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'zam');" id="wz">Zamówienia</a>
-            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'riz');" id="lriz">Reklamacje i zwroty</a>
-            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'ust');" id="ustk">Ustawienia konta</a>
+            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'zam');" id="wz"><i class="fas fa-shopping-cart"></i>Zamówienia</a>
+            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'riz');" id="lriz"><i class="fas fa-exchange-alt"></i>Reklamacje i zwroty</a>
+            <a href="javascript:void(0);" class="tablinks" onclick="otworztab(event, 'ust');" id="ustk"><i class="fas fa-cogs"></i>Ustawienia konta</a>
         </div>
         <div id="dane" class="tabcontent">
             <?php

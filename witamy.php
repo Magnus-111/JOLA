@@ -30,12 +30,12 @@ require 'polacz.php';
             <br/>
             <h2>Rejestracja zakończona pomyślnie</h2>
             <h4>Na poniższy adres e-mail zostało wysłane podsumowanie rejestracji. Otwórz wiadomość i aktywuj konto. </h4>
-            <?php echo '&nbsp;<a href="https://'.$_SESSION['emailr'].'" >'.$_SESSION['emailr'].'</a>'; ?>
+            <?php echo '&nbsp;<a href="#" >'.$_SESSION['emailr'].'</a>'; ?>
             <br/><br/>
             <h3>Życzymy udanych zakupów w naszym sklepie.</h3>
             <br/>
             <h4>Poleć nas swoim znajomym.</h4>
-            &nbsp; <a href="#">facebook</a> <a href="#">google+</a> <a href="#">twitter</a>
+            <a href="#"><img style="vertical-align: -8px;" src="ikon/facebook_ikona.png" width="33" height="26"/></a> <a href="#"><img style="vertical-align: -8px;" src="ikon/google+_ikona.png" width="33" height="26"/></a>
             <br/><br/>
             <h3>Jeśli w ciągu 5 dni roboczych nie aktywujesz konta, to zostanie ono usunięte z naszego sklepu.</h3>
             <br/><br/>

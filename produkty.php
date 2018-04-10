@@ -74,14 +74,17 @@ function prod($t, $tk, $c1, $c2, $s)
             break;
     }
     switch ($t) {
-        case "Buty":
-            $wt = ' `typ` = "Buty"';
+        case "buty":
+            $wt = ' `typ` = "buty"';
             break;
-        case "Torebki":
-            $wt = ' `typ` = "Torebki"';
+        case "torebki":
+            $wt = ' `typ` = "torebki"';
             break;
-        case "Dodatki":
-            $wt = ' `typ` = "Dodatki"';
+        case "dodatki":
+            $wt = ' `typ` = "dodatki"';
+            break;
+        case "portfele":
+            $wt = ' `typ` = "portfele"';
             break;
         default:
             $wt = '';
@@ -255,7 +258,8 @@ function prod($t, $tk, $c1, $c2, $s)
                                     }
                                     ?>> Buty
                                     </option>
-                                    <option value="torebki" <?php
+                                    <option value="torebki"
+                                        <?php
                                     if (isset($_POST['t'])) {
                                         if ($_POST['t'] == "torebki") {
                                             echo 'selected';
@@ -375,7 +379,7 @@ function prod($t, $tk, $c1, $c2, $s)
                     </div>
                     <h4>Materiał: </h4>
                     <div class="select">
-                        <select name="tk">
+                        <select name="tk" title="">
                             <option value=" " <?php
                             if (isset($_POST['tk'])) {
                                 if ($_POST['tk'] == " ") {

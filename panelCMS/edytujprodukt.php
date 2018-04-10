@@ -43,7 +43,9 @@ if (isset($_POST['anuluj']))
 if (isset($_GET['uzd']) && isset($_GET['idp']))
 {
     mysqli_query($pol, 'DELETE FROM obr WHERE nazwa="'.$_GET['uzd'].'" AND id_prod='.$_GET['idp']);
-    unlink("pimg/".$_GET['uzd']);
+    if ($_GET['uzd'] != "prod.png") {
+        unlink("pimg/".$_GET['uzd']);
+    }
     header("Location: admin.php?karta=1&idp=".$_GET['idp']);
 }
 

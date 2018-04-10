@@ -109,7 +109,7 @@ function snm($idp)
             </div>
             <?php
             if ($tzdj) {
-                echo '<div class="slideshow-container" style = "width: 40%;">
+                echo '<div class="slideshow-container" style = "width: 40%; float: left;">
                         <div class="slideshow">';
                 $ilezdj = 0;
                 $wzdj = 0;

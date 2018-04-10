@@ -1,4 +1,6 @@
-﻿/* Szkielet strony HTML */
+﻿@import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
+
+/* Szkielet strony HTML */
 html {
     width: 100%;
     height: 100%;
@@ -32,6 +34,10 @@ a:hover {
 }
 a:active {
     font-weight: bold;
+}
+
+i {
+    margin-right: 5px;
 }
 
 label {
@@ -1679,6 +1685,11 @@ ul.checkout-bar a {
         margin: -3px auto;
         padding: 0;
         width: 34px;
+    }
+
+    #mpp i {
+        font-size: 32px;
+        margin: 0 auto;
     }
 
     #wyszukiwarka {

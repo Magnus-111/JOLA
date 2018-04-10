@@ -106,7 +106,7 @@ function toggleMenu() {
         $('#paseklogowania').css({height: "46px"});
         $('#paseklr').css({display: "block"});
         $('#pasekpomocy').css({display: "block"});
-        $('#ikotog').attr('src','ikon/aup.png');
+        $('#ikotog').attr('class','fas fa-angle-up');
     }
     else
     {
@@ -114,7 +114,7 @@ function toggleMenu() {
         $('#paseklogowania').css({height: "0px", display: "none"});
         $('#paseklr').css({display: "none"});
         $('#pasekpomocy').css({display: "none"});
-        $('#ikotog').attr('src','ikon/kp.png');
+        $('#ikotog').attr('class','fas fa-bars');
     }
 }
 

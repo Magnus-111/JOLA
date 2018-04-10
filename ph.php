@@ -13,10 +13,24 @@ function generujhaslo() {
     return $rs;
 }
 
-if (isset($_POST['g-recaptcha-response']))
+function CheckCaptcha($userResponse)
 {
-
-    //$zwrotrecaptcha = json_decode($url);
+    $fields_string = '';
+    $fields = array(
+        'secret' => '6Lc8aEAUAAAAAB66WMOVlD3pcjo-lMawVHELC7mP',
+        'response' => $userResponse
+    );
+    foreach ($fields as $key => $value)
+        $fields_string .= $key . '=' . $value . '&';
+    $fields_string = rtrim($fields_string, '&');
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+    curl_setopt($ch, CURLOPT_POST, count($fields));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+    $res = curl_exec($ch);
+    curl_close($ch);
+    return json_decode($res, true);
 }
 
 ?>
@@ -45,16 +59,16 @@ if (isset($_POST['g-recaptcha-response']))
             if (!isset($_POST['phaslo'])) {
                 echo '<h4>Podaj email konto, którym się logujesz.</h4>
                       <form action="ph.php" method="post">
-                            <input class="tb" type="text" name="pemail" placeholder="E-mail" />
+                            <input class="tb" type="text" name="pemail" placeholder="E-mail" style="width: 50%;" />
                             <br/><br/>
-                            <div class="g-recaptcha" data-sitekey="6LfEhCkUAAAAAFMXlCuJIvBu2MJfub1a6Q4idNIN"></div><br/>
+                            <div class="g-recaptcha" data-sitekey="6Lc8aEAUAAAAAKqz3tecyqzHGvCPQJ-BP2Toa6gy"></div>
                             <input class="btn" type="submit" name="phaslo" value="Przywróć" />
                       </form>';
             }
             else
             {
-                $url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfEhCkUAAAAAKA6OyehFRcBJknDc6yJbfHTlm3n&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']."");
-                if (json_decode($url,true)['success'] == 1)
+                $resReCaptcha = CheckCaptcha($_POST['g-recaptcha-response']);
+                if ($resReCaptcha['success'])
                 {
                     $email = $_POST['pemail'];
                     $czyemail = mysqli_query($pol, 'SELECT * FROM lkk WHERE email ="' . $email . '"');
