@@ -64,53 +64,55 @@ function snm($idp)
                 echo '<h1>'.$pr->tytul.'</h1>';
                 echo '<img style=" width: 100%; margin: 5px auto;" src="panelCMS/pimg/'.$pr->baner.'" /><br/>';
                 echo '<h2 style="margin: 2px auto; text-align: center;">'.$pr->opis.'</h2>';
-                echo '<br/><h3 style="margin: 2px auto; text-align: center;">Produkty objęte promocją:</h3><br/>';
-                $produkty = explode(";",$pr->id_prod);
-                for ($i = 0; $i < count($produkty);$i++)
-                {
-                    $pzp = mysqli_query($pol,'SELECT * FROM produkty WHERE id='.$produkty[$i]);
-                    $opzp = mysqli_fetch_object($pzp);
-                    echo '<div class="produkt" title="Naciśnij, aby zobaczyć szczegóły produktu" onclick="location.href=\'produkt.php?idx=' . $opzp->id . '\';" >';
-                    echo '<div class="minimg" >';
-                    $rez = mysqli_query($pol, 'SELECT * FROM obr WHERE id_prod=' . $opzp->id . ' ORDER BY id ASC LIMIT 1');
-                    if (mysqli_num_rows($rez) > 0) {
-                        while ($z = mysqli_fetch_object($rez)) {
-                            echo '<img alt="z1" src="panelCMS/pimg/' . $z->nazwa . ' " />';
+                if (!empty($pr->id_prod)) {
+                    echo '<br/><h3 style="margin: 2px auto; text-align: center;">Produkty objęte promocją:</h3><br/>';
+                    $produkty = explode(";",$pr->id_prod);
+                    for ($i = 0; $i < count($produkty);$i++)
+                    {
+                        $pzp = mysqli_query($pol,'SELECT * FROM produkty WHERE id='.$produkty[$i]);
+                        $opzp = mysqli_fetch_object($pzp);
+                        echo '<div class="produkt" title="Naciśnij, aby zobaczyć szczegóły produktu" onclick="location.href=\'produkt.php?idx=' . $opzp->id . '\';" >';
+                        echo '<div class="minimg" >';
+                        $rez = mysqli_query($pol, 'SELECT * FROM obr WHERE id_prod=' . $opzp->id . ' ORDER BY id ASC LIMIT 1');
+                        if (mysqli_num_rows($rez) > 0) {
+                            while ($z = mysqli_fetch_object($rez)) {
+                                echo '<img alt="z1" src="panelCMS/pimg/' . $z->nazwa . ' " />';
+                            }
+                        } else {
+                            echo '<img alt="z1" src="ikon/prod.png" />';
                         }
-                    } else {
-                        echo '<img alt="z1" src="ikon/prod.png" />';
-                    }
-                    echo '</div>';
-                    echo '<div class="etykp"><a style="font-size: 120%;" href="produkt.php?idx=' . ($opzp->id) . '" >' . ($opzp->nazwa) . '</a><br/><br/>';
-                    if ($opzp->dostep < 1)
-                    {
-                        echo '<span style="font-style: italic; color: #ff0000; font-weight: 600;">Dostępność: ' . $opzp->dostep . ' szt</span><br />';
-                    }
-                    elseif ($opzp->dostep < 4)
-                    {
-                        echo '<span style="font-style: italic; color: #ff8900; font-weight: 600;">Dostępność: ' . $opzp->dostep . ' szt</span><br />';
-                    }
-                    else
-                    {
-                        echo '<span style="font-style: italic; font-weight: 600;">Dostępność: ' . $opzp->dostep . ' szt</span><br />';
-                    }
-                    if ($opzp->scena == NULL) {
-                        echo '<span class="cena">' . number_format($opzp->cena, 2, ',', '.') . ' zł</span><br/>';
-                    } else {
-                        echo '<span class="scena">' . number_format($opzp->scena, 2, ',', '.') . ' zł</span><br/>';
-                        echo '<span class="acena">' . number_format($opzp->cena, 2, ',', '.') . ' zł</span><br/>';
-                    }
+                        echo '</div>';
+                        echo '<div class="etykp"><a style="font-size: 120%;" href="produkt.php?idx=' . ($opzp->id) . '" >' . ($opzp->nazwa) . '</a><br/><br/>';
+                        if ($opzp->dostep < 1)
+                        {
+                            echo '<span style="font-style: italic; color: #ff0000; font-weight: 600;">Dostępność: ' . $opzp->dostep . ' szt</span><br />';
+                        }
+                        elseif ($opzp->dostep < 4)
+                        {
+                            echo '<span style="font-style: italic; color: #ff8900; font-weight: 600;">Dostępność: ' . $opzp->dostep . ' szt</span><br />';
+                        }
+                        else
+                        {
+                            echo '<span style="font-style: italic; font-weight: 600;">Dostępność: ' . $opzp->dostep . ' szt</span><br />';
+                        }
+                        if ($opzp->scena == NULL) {
+                            echo '<span class="cena">' . number_format($opzp->cena, 2, ',', '.') . ' zł</span><br/>';
+                        } else {
+                            echo '<span class="scena">' . number_format($opzp->scena, 2, ',', '.') . ' zł</span><br/>';
+                            echo '<span class="acena">' . number_format($opzp->cena, 2, ',', '.') . ' zł</span><br/>';
+                        }
 
-                    echo '</div>';
-                    if (snm($opzp->id))
-                    {
-                        echo '<span><a class="dk" title="Naciśnij, aby dodać do koszyka" href="koszyk.php?id=' . ($opzp->id) . '">Do koszyka</a></span>';
+                        echo '</div>';
+                        if (snm($opzp->id))
+                        {
+                            echo '<span><a class="dk" title="Naciśnij, aby dodać do koszyka" href="koszyk.php?id=' . ($opzp->id) . '">Do koszyka</a></span>';
+                        }
+                        else
+                        {
+                            echo '<span class="bp" title="Brak produktu na magazynie">Brak</span>';
+                        }
+                        echo '</div>';
                     }
-                    else
-                    {
-                        echo '<span class="bp" title="Brak produktu na magazynie">Brak</span>';
-                    }
-                    echo '</div>';
                 }
             ?>
         </div>

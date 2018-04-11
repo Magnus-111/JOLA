@@ -40,8 +40,9 @@
         {
             echo '<span style="position: relative; display: block; margin: 2px auto; left: 30%;">Brak przecenionych produktów.</span>';
         }
-        else if (mysqli_num_rows($pp) > 4)
-        {
+        //else if (mysqli_num_rows($pp) > 4)
+        //{
+        else {
             while ($op = mysqli_fetch_object($pp)) {
                 echo '<div class="pSlides fade">';
                 echo '<div class="produktslide" title="Naciśnij, aby zobaczyć szczegóły produktu" onclick="location.href=\'produkt.php?idx='.$op->id.'\';" >';
@@ -83,7 +84,7 @@
             }
             echo '<script type="text/javascript">ppokazSlajdow(-1); setInterval(pkaruzela,7000);</script>';
         }
-        else
+        /*else
         {
             while ($oppp = mysqli_fetch_object($pp)) {
                 echo '<div class="pSlides fade">';
@@ -115,7 +116,7 @@
                 echo '</div>';
             }
             echo '<script type="text/javascript">ppokazSlajdow(-1);</script>';
-        }
+        }*/
         ?>
 
     </div>

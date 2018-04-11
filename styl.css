@@ -1300,13 +1300,13 @@ div.tab > a.tablinks.active {
 
 /* Position the "next button" to the right */
 .gnext {
-    right: -8px;
-    border-radius: 3px 0 0 3px;
+    right: 0;
+    /*border-radius: 3px 0 0 3px;*/
 }
 
 .gprev
 {
-    left: 8px;
+    left: 0;
 }
 /* On hover, add a black background color with a little bit see-through */
 .gprev:hover, .gnext:hover {

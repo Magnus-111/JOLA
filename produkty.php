@@ -92,13 +92,13 @@ function prod($t, $tk, $c1, $c2, $s)
     }
     switch ($tk) {
         case "Tkanina":
-            $wtk = ' `material` = "Materiał"';
+            $wtk = ' `material` = "materiał"';
             break;
         case "Skora":
-            $wtk = ' `material` = "Skóra"';
+            $wtk = ' `material` = "skóra"';
             break;
         case "Inny":
-            $wtk = ' `material` = "Inny"';
+            $wtk = ' `material` = "inny"';
             break;
         default:
             $wtk = '';
@@ -359,7 +359,7 @@ function prod($t, $tk, $c1, $c2, $s)
                             ?>>Wybierz
                             </option>
                             <?php
-                            $op = mysqli_query($pol, "SELECT DISTINCT typ FROM `produkty` ORDER BY typ ASC ");
+                            $op = mysqli_query($pol, "SELECT DISTINCT typ FROM `produkty` ORDER BY typ ASC");
                             while ($oop = mysqli_fetch_object($op))
                             {
                                 echo '<option value="'.$oop->typ.'"';
