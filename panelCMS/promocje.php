@@ -53,7 +53,8 @@ if (!isset($_GET['dodajpromo']))
     {
         echo '<tr><td colspan="8">Brak promocji</td></tr>';
     }*/
-    $q = mysqli_query($pol, "SELECT * FROM promocje ");
+    $q = mysqli_query($pol, /** @lang text */
+        "SELECT * FROM promocje;");
     while ($pq = mysqli_fetch_assoc($q)) {
         echo '<tr>';
         echo '<td>'.$pq['id'].'</a></td>';

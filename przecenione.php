@@ -35,19 +35,18 @@
 <div class="slideshow-container" style="display: flex; width: 100%;">
     <div class="slideShow">
         <?php
-        $pp = mysqli_query($pol, 'SELECT * FROM `produkty` WHERE scena <> NULL AND dostep > 0');
+        $pp = mysqli_query($pol, 'SELECT * FROM `produkty` WHERE scena IS NOT NULL AND dostep > 0');
         if (mysqli_num_rows($pp) < 1)
         {
             echo '<span style="position: relative; display: block; margin: 2px auto; left: 30%;">Brak przecenionych produktów.</span>';
         }
-        //else if (mysqli_num_rows($pp) > 4)
-        //{
-        else {
-            while ($op = mysqli_fetch_object($pp)) {
+        else if (mysqli_num_rows($pp) > 4)
+        {
+            while ($opp = mysqli_fetch_object($pp)) {
                 echo '<div class="pSlides fade">';
                 echo '<div class="produktslide" title="Naciśnij, aby zobaczyć szczegóły produktu" onclick="location.href=\'produkt.php?idx='.$op->id.'\';" >';
                 echo '<div class="minimg" >';
-                $rez = mysqli_query($pol, 'SELECT * FROM obr WHERE id_prod=' . $op->id . ' ORDER BY id ASC LIMIT 1');
+                $rez = mysqli_query($pol, 'SELECT * FROM obr WHERE id_prod=' . $opp->id . ' ORDER BY id ASC LIMIT 1');
                 if (mysqli_num_rows($rez) > 0) {
                     while ($z = mysqli_fetch_object($rez)) {
                         echo '<img alt="z1" src="panelCMS/pimg/' . $z->nazwa . ' " />';
@@ -56,35 +55,35 @@
                     echo '<img alt="z1" src="ikon/prod.png" />';
                 }
                 echo '</div>';
-                echo '<div class="etykp"><a style="font-size: 120%;" href="produkt.php?idx=' . ($op->id) . '" >' . ($op->nazwa) . '</a><br/><br/>';
-                if ($op->dostep < 1)
+                echo '<div class="etykp"><a style="font-size: 120%;" href="produkt.php?idx=' . ($opp->id) . '" >' . ($opp->nazwa) . '</a><br/><br/>';
+                if ($opp->dostep < 1)
                 {
-                    echo '<span style="font-style: italic; color: #ff0000; font-weight: 600;">Dostępność: ' . $op->dostep . ' szt</span><br />';
+                    echo '<span style="font-style: italic; color: #ff0000; font-weight: 600;">Dostępność: ' . $opp->dostep . ' szt</span><br />';
                 }
-                elseif ($op->dostep < 4)
+                elseif ($opp->dostep < 4)
                 {
-                    echo '<span style="font-style: italic; color: #ff8900; font-weight: 600;">Dostępność: ' . $op->dostep . ' szt</span><br />';
+                    echo '<span style="font-style: italic; color: #ff8900; font-weight: 600;">Dostępność: ' . $opp->dostep . ' szt</span><br />';
                 }
                 else
                 {
-                    echo '<span style="font-style: italic; font-weight: 600;">Dostępność: ' . $op->dostep . ' szt</span><br />';
+                    echo '<span style="font-style: italic; font-weight: 600;">Dostępność: ' . $opp->dostep . ' szt</span><br />';
                 }
-                if ($op->scena == NULL) {
-                    echo '<span class="cena">' . number_format($op->cena, 2, ',', '.') . ' zł</span><br/>';
+                if ($opp->scena == NULL) {
+                    echo '<span class="cena">' . number_format($opp->cena, 2, ',', '.') . ' zł</span><br/>';
                 } else {
-                    echo '<span class="scena">' . number_format($op->scena, 2, ',', '.') . ' zł</span><br/>';
-                    echo '<span class="acena">' . number_format($op->cena, 2, ',', '.') . ' zł</span><br/>';
+                    echo '<span class="scena">' . number_format($opp->scena, 2, ',', '.') . ' zł</span><br/>';
+                    echo '<span class="acena">' . number_format($opp->cena, 2, ',', '.') . ' zł</span><br/>';
                 }
 
                 echo '</div>';
-                echo '<span><a class="dk" title="Naciśnij, aby dodać do koszyka" href="koszyk.php?id=' . ($op->id) . '">Do koszyka</a></span>';
+                echo '<span><a class="dk" title="Naciśnij, aby dodać do koszyka" href="koszyk.php?id=' . ($opp->id) . '">Do koszyka</a></span>';
                 echo '</div></div>';
                 echo '<a class="gprev" onclick="pplusSlides3(-3);">&#10094;</a>
                   <a class="gnext" onclick="pplusSlides3(3);">&#10095;</a>';
             }
             echo '<script type="text/javascript">ppokazSlajdow(-1); setInterval(pkaruzela,7000);</script>';
         }
-        /*else
+        else
         {
             while ($oppp = mysqli_fetch_object($pp)) {
                 echo '<div class="pSlides fade">';
@@ -116,7 +115,7 @@
                 echo '</div>';
             }
             echo '<script type="text/javascript">ppokazSlajdow(-1);</script>';
-        }*/
+        }
         ?>
 
     </div>
